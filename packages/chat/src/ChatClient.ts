@@ -1296,7 +1296,9 @@ export class ChatClient extends EventEmitter {
 	 * Disconnects from the chat server.
 	 */
 	quit(): void {
+		// @ts-ignore
 		this._messageRateLimiter?.destroy?.();
+		// @ts-ignore
 		this._joinRateLimiter?.destroy?.();
 		this._messageRateLimiter = undefined;
 		this._joinRateLimiter = undefined;

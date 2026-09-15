@@ -33,6 +33,11 @@ export interface EventSubChatMessageEmote {
 	format: string[];
 }
 
+export interface EventSubChatMessageGif {
+	id: string;
+	url: string;
+}
+
 /** @private */
 export interface EventSubChatMessageEmotePart {
 	type: 'emote';
@@ -54,11 +59,17 @@ export interface EventSubChatMessageMentionPart {
 	mention: EventSubChatMessageMention;
 }
 
+export interface EventSubChatMessageGifPart {
+	type: 'gif';
+	gif: EventSubChatMessageGif;
+}
+
 /** @private */
 export type EventSubChatMessagePart =
 	| EventSubChatMessageTextPart
 	| EventSubChatMessageCheermotePart
 	| EventSubChatMessageEmotePart
+	| EventSubChatMessageGifPart
 	| EventSubChatMessageMentionPart;
 
 /** @private */
