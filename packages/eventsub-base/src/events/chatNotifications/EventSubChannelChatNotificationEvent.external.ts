@@ -15,6 +15,7 @@ export type EventSubChannelChatNotificationType =
 	| 'bits_badge_tier'
 	| 'charity_donation'
 	| 'watch_streak'
+	| 'modiversary'
 	| 'shared_chat_sub'
 	| 'shared_chat_resub'
 	| 'shared_chat_sub_gift'
@@ -227,6 +228,17 @@ export interface EventSubChannelChatWatchStreakNotificationEventData
 }
 
 /** @private */
+interface EventSubChannelChatModiversaryNotificationPayload {
+	months: number;
+}
+
+export interface EventSubChannelChatModiversaryNotificationEventData
+	extends EventSubChannelChatBaseNotificationEventData {
+	notice_type: 'modiversary';
+	modiversary: EventSubChannelChatModiversaryNotificationPayload;
+}
+
+/** @private */
 export interface EventSubChannelChatSharedChatSubNotificationEventData
 	extends EventSubChannelChatBaseNotificationEventData {
 	notice_type: 'shared_chat_sub';
@@ -289,6 +301,7 @@ export interface EventSubChannelChatSharedChatAnnouncementNotificationEventData
 	shared_chat_announcement: EventSubChannelChatAnnouncementNotificationPayload;
 }
 
+
 /** @private */
 export type EventSubChannelChatNotificationEventData =
 	| EventSubChannelChatSubNotificationEventData
@@ -304,6 +317,7 @@ export type EventSubChannelChatNotificationEventData =
 	| EventSubChannelChatCharityDonationNotificationEventData
 	| EventSubChannelChatBitsBadgeTierNotificationEventData
 	| EventSubChannelChatWatchStreakNotificationEventData
+	| EventSubChannelChatModiversaryNotificationEventData
 	| EventSubChannelChatSharedChatSubNotificationEventData
 	| EventSubChannelChatSharedChatResubNotificationEventData
 	| EventSubChannelChatSharedChatSubGiftNotificationEventData

@@ -20,6 +20,7 @@ import { type EventSubChannelChatSharedChatGiftPaidUpgradeNotificationEvent } fr
 import { type EventSubChannelChatSharedChatPrimePaidUpgradeNotificationEvent } from './EventSubChannelChatSharedChatPrimePaidUpgradeNotificationEvent.js';
 import { type EventSubChannelChatSharedChatRaidNotificationEvent } from './EventSubChannelChatSharedChatRaidNotificationEvent.js';
 import { type EventSubChannelChatSharedChatAnnouncementNotificationEvent } from './EventSubChannelChatSharedChatAnnouncementNotificationEvent.js';
+import {EventSubChannelChatModiversaryNotificationEvent} from "./EventSubChannelChatModiversaryNotificationEvent.js";
 
 export type EventSubChannelChatNotificationEvent =
 	| EventSubChannelChatSubNotificationEvent
@@ -35,6 +36,7 @@ export type EventSubChannelChatNotificationEvent =
 	| EventSubChannelChatCharityDonationNotificationEvent
 	| EventSubChannelChatBitsBadgeTierNotificationEvent
 	| EventSubChannelChatWatchStreakNotificationEvent
+	| EventSubChannelChatModiversaryNotificationEvent
 	| EventSubChannelChatSharedChatSubNotificationEvent
 	| EventSubChannelChatSharedChatResubNotificationEvent
 	| EventSubChannelChatSharedChatSubGiftNotificationEvent

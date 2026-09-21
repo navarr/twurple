@@ -26,6 +26,9 @@ import { EventSubChannelChatUnraidNotificationEvent } from '../events/chatNotifi
 import { EventSubChannelChatWatchStreakNotificationEvent } from '../events/chatNotifications/EventSubChannelChatWatchStreakNotificationEvent.js';
 import type { EventSubBase } from '../EventSubBase.js';
 import { EventSubSubscription } from './EventSubSubscription.js';
+import {
+	EventSubChannelChatModiversaryNotificationEvent
+} from "../events/chatNotifications/EventSubChannelChatModiversaryNotificationEvent.js";
 
 /** @internal */
 @rtfm('eventsub-base', 'EventSubSubscription')
@@ -115,6 +118,11 @@ export class EventSubChannelChatNotificationSubscription extends EventSubSubscri
 				return this._client._config.managed
 					? new EventSubChannelChatWatchStreakNotificationEvent(data, this._client._config.apiClient)
 					: new EventSubChannelChatWatchStreakNotificationEvent(data);
+
+			case 'modiversary':
+				return this._client._config.managed
+					? new EventSubChannelChatModiversaryNotificationEvent(data, this._client._config.apiClient)
+					: new EventSubChannelChatModiversaryNotificationEvent(data);
 
 			case 'shared_chat_sub':
 				return this._client._config.managed
